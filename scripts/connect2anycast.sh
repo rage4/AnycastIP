@@ -6,7 +6,7 @@ anycast_password=''
 anycast_region=''
 anycast_zerotier=''
 anycast_asnum=''
-anycast_network='6ab565387a056897'
+anycast_network='a80b1461811046f2'
 
 #################################################
 
