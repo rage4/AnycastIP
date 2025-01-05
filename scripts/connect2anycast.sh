@@ -50,12 +50,12 @@ if [[ "$status" != "OK" ]]; then
 fi
 
 address="$anycast_url/anycastapi/createnodeforasn/?zerotier=$anycast_zerotier&code=$anycast_region&asnum=$anycast_asnum"
-status=`wget --user=$anycast_username --password=$anycast_password --auth-no-challenge -qO- $address`
+status=`wget --user=$anycast_username --password=$anycast_password --auth-no-challenge -qO- $address | sed 's/"//g'`
 
-if [[ "$status" == "\"ok\"" ]]; then
+if [[ "$status" == "ok" ]]; then
  echo "OK: node has been added successfully"
 else
- echo "ERROR: unable to add node $anycast_zerotier to $anycast_network ($anycast_region)"
+ echo "ERROR: $status"
  exit 1
 fi
 
